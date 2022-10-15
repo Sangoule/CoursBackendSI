@@ -4,6 +4,7 @@ import {v4 as uuid4} from 'uuid'; //const dotenv = require('dotenv').config()
 import mysql from 'mysql'; // const mysql = require('mysql');
 import bodyParser from 'body-parser';
 import  EtudiantController from './controllers/etudiantController.js';
+import  EmployerController from './controllers/employerController.js';
 
 import basicAuth from './middlewares/basicAuth.js';
 
@@ -11,7 +12,7 @@ import basicAuth from './middlewares/basicAuth.js';
 //Ce qui va nous permettre de lire params dans .env
 
 
-const PORT = process.env.PORT;
+const PORT = 8000;
 /**
  * Créer notre application
  */
@@ -24,6 +25,7 @@ app.use(bodyParser.json());
 app.use(basicAuth);
 
 app.use('/etudiants', EtudiantController);
+app.use('/employer', EmployerController);
 
 //app.use('/notes', NoteController)
 

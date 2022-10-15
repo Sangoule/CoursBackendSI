@@ -3,8 +3,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 var mysqlConnection = mysql.createConnection({
     host: process.env.HOST,
-    user: process.env.USER,
-    password: '',
+    port:8889,
+    user: 'root',
+    password: 'root',
     database: process.env.DATABASE,
     multipleStatements: true
     });
